@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Lato:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon_LogoPetitsPlats.png" />
+    <!-- Style -->
+    <link href="./style/css/style.css" rel="stylesheet" type="text/css" />
+    <!-- Link Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Les petits plats</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <header>
+            <div class="header">
+                <img src="./assets/images/LogoPetitsPlats.svg" alt="">
+                <h1 class="title">Les petits plats</h1>
+            </div>
+
+            <!-- Barre de recherche -->
+            <div class="row">
+                <form class="col">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Rechercher une recette" name="search" id="recherche">
+                        <label id="rechercher" for="recherche"></label>
+                        <div class="searchIcon">
+                            <img src="./assets/images/search.svg" alt="logo rechercher" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- Les tags -->
+            <div class="tags">
+                <div class="tagsIngredient itemUp">
+                </div>
+                <div class="tagsAppliance itemUp">
+                </div>
+                <div class="tagsUstensils itemUp">
+                </div>
+            </div>
+            <!-- Les filtres -->
+            <div class="row filters">
+                <div class="col inputFilters">
+                    <!-- ********** Un filtre -->
+                    <div class="blockInput">
+                        <input class="bg-primary form-control" type="text" placeholder="Ingrédients" id="inputBlue">
+                        <img class="chevron" src="./assets/images/chevron.svg" alt="bouton pour déployer les filtres">
+                        <div class="bg-primary dropdown-filter" id="ingredients">
+                        </div>
+                    </div>
+                    <!-- ********** Un filtre -->
+                    <div class="blockInput">
+                        <input class="bg-success form-control" type="text" placeholder="Appareils" id="inputGreen">
+                        <img class="chevron" src="./assets/images/chevron.svg" alt="bouton pour déployer les filtres">
+                        <div class="bg-success dropdown-filter" id="appliances">
+                        </div>
+                    </div>
+                    <!-- ********** Un filtre -->
+                    <div class="blockInput">
+                        <input class="bg-danger form-control" type="text" placeholder="Ustensiles" id="inputRed">
+                        <img class="chevron" src="./assets/images/chevron.svg" alt="bouton pour déployer les filtres">
+                        <div class="bg-danger dropdown-filter" id="ustensils">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+            </div>
+        </header>
+
+        <main>
+            <div class="row" id="recipesCards"></div>
+        </main>
+
+    </div>
+
+
+    <script type="text/javascript" src="./scripts/MVC/model.js"></script>
+    <script type="text/javascript" src="./scripts/MVC/view.js"></script>
+    <script type="text/javascript" src="./scripts/MVC/controller.js"></script>
+    <script type="text/javascript" src="./scripts/index.js"></script>
+
+
+    <!-- Links Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

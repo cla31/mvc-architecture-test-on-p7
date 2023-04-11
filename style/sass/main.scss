@@ -1,0 +1,256 @@
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .container-fluid {
+            width: 100%;
+            max-width: 2000px;
+            // border: 2px solid green;
+            margin-top: 20px;
+            .header {
+                // border: 4px solid pink;
+                justify-content: center;
+                text-align: center;
+                padding-bottom: 30px;
+                .title {
+                    color: #d04f4f;
+                }
+            }
+            .form-group {
+                position: relative;
+                // background-color: pink;
+                .form-control {
+                    font-weight: bold;
+                    cursor: pointer;
+                    background-color: #e7e7e7;
+                }
+                .form-control::placeholder {
+                    opacity: 0.90;
+                    font-weight: 100;
+                }
+                .searchIcon {
+                    position: absolute;
+                    right: 1rem;
+                    top: 0.5rem;
+                    z-index: 10;
+                }
+            }
+        }
+        
+        //tags
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            // border: 4px solid greenyellow;
+            .tagSelected {
+                color: #e7e7e7;
+                border-radius: 5px;
+                width: auto;
+                // align-items: center;
+                margin-left: 5px;
+                margin-bottom: 5px;
+                padding-left: 6px;
+                padding-right: 6px;
+                // background-color: #007bff;
+                &:hover {
+                    color: #e7e7e7;
+                }
+            }
+            .itemUp {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        
+        //Filtres
+        .inputFilters {
+            display: flex;
+            margin-bottom: 10px;
+            // border: 4px solid greenyellow;
+            @media screen and (max-width: 768px) {
+                flex-wrap: wrap;
+            }
+        }
+        
+        .blockInput {
+            position: relative;
+            // width: 900px;
+            &:hover {
+                .dropdown-filter {
+                    height: 400px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    @media screen and (max-width: 768px) {
+                        height: auto;
+                    }
+                }
+                .chevron {
+                    // border: 4px solid blue;
+                    transform: rotate(180deg);
+                }
+            }
+            //Lorsque l'input est actif on le met blanc
+            .form-control:enabled {
+                color: #e7e7e7;
+            }
+            .form-control {
+                color: #e7e7e7;
+                width: 90%;
+                min-width: 170px;
+                // border: 4px solid red;
+                &::placeholder {
+                    color: #e7e7e7;
+                }
+                &:hover {
+                    width: 400px;
+                    //remarque: ça décale un peu le chevron retourné:
+                    @media screen and (max-width: 768px) {
+                        width: 184px;
+                    }
+                }
+            }
+            .chevron {
+                // border: 4px solid red;
+                position: absolute;
+                right: 28px;
+                top: 12px;
+                cursor: pointer;
+            }
+            //https://stackoverflow.com/questions/12305389/auto-create-columns-using-single-plain-list
+            .dropdown-filter {
+                display: none;
+                //https://stackoverflow.com/questions/42252682/whats-the-difference-between-visibility-hidden-and-visibility-collapse-in-fle
+                // visibility: hidden;
+                position: absolute;
+                z-index: 1;
+                // width: 90%;
+                width: 400px;
+                height: 400px;
+                border-radius: 5px;
+                overflow-y: auto;
+                // border: 4px solid red;
+                //Autre solution pour les colonnes:
+                // -webkit-column-count: 4;
+                // -webkit-column-gap: 20px;
+                // -moz-column-count: 4;
+                // -moz-column-gap: 20px;
+                // -o-column-count: 4;
+                // -o-column-gap: 20px;
+                // column-count: 4;
+                // column-gap: 20px;
+                @media screen and (max-width: 768px) {
+                    width: 260px;
+                    // flex-wrap: wrap;
+                }
+                .dropdown-item {
+                    text-decoration: none;
+                    display: block;
+                    color: #e7e7e7;
+                    width: auto;
+                    &:hover {
+                        // background-color: #ddd;
+                        color: #e7e7e7;
+                    }
+                }
+                .blue {
+                    &:hover {
+                        color: #007bff;
+                    }
+                    list-style-type: none;
+                }
+                .green {
+                    &:hover {
+                        color: #28a745;
+                    }
+                }
+                .red {
+                    &:hover {
+                        color: #dc3545;
+                    }
+                    list-style-type: none;
+                }
+            }
+        }
+        
+        //Les recettes
+        .card {
+            margin-bottom: 20px;
+            .container-img {
+                overflow: hidden;
+                position: relative;
+                // border: blueviolet 2px solid;
+                height: 220px;
+                .imgRecipe {
+                    // border: 4px solid red;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: 80% 18%;
+                }
+            }
+        }
+        
+        .card-body {
+            background-color: #e7e7e7;
+            // border: 4px solid red;
+            height: 290px;
+            &__header {
+                // border: 2px solid red;
+                display: flex;
+                justify-content: space-between;
+                .card-title {
+                    font-family: "Lato", sans-serif;
+                    font-weight: 400;
+                    font-size: 18px;
+                    margin-top: 3px;
+                    // border: 2px solid red;
+                    width: 70%;
+                }
+                .minutes {
+                    font-size: 18px;
+                    // border: 2px solid red;
+                    // .icon-minutes {
+                    //     margin-right: 5px;
+                    // }
+                }
+            }
+            .main-card {
+                display: flex;
+                .ingredients {
+                    padding-left: 0px;
+                }
+                .card-text {
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 400;
+                    margin-left: 20px;
+                    //pour que les 3 petits points soient en bas du texte:
+                    display: -webkit-box;
+                    -webkit-line-clamp: 10;
+                    -webkit-box-orient: vertical;
+                    // white-space: break-spaces;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    // white-space: nowrap;
+                    font-size: 12px;
+                    width: 60%;
+                    height: 180px;
+                }
+            }
+        }
+        
+        .time,
+        .ingredients {
+            font-family: "Lato", sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            list-style: none;
+        }
+        
+        // Si pas de recettes
+        #error {
+            color: red;
+            margin-left: 20px;
+        }
